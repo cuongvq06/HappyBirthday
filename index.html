@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lê Thảo Hương - 11/09/2007</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+</head>
+<script>
+function isInAppBrowser() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Line") || ua.includes("Zalo");
+}
+
+if (isInAppBrowser()) {
+  const notice = document.createElement("div");
+  notice.style.position = "fixed";
+  notice.style.bottom = "20px";
+  notice.style.left = "50%";
+  notice.style.transform = "translateX(-50%)";
+  notice.style.background = "rgba(0,0,0,0.8)";
+  notice.style.color = "#fff";
+  notice.style.padding = "15px 20px";
+  notice.style.borderRadius = "10px";
+  notice.style.zIndex = "9999";
+  notice.style.fontSize = "16px";
+  notice.style.textAlign = "center";
+  notice.innerHTML = `
+    🚀 Để trải nghiệm mượt hơn, hãy mở link này trong <b>Safari/Chrome</b>.<br>
+    <a href="googlechrome://cuongvq06.github.io/ThaoHuong11092007/" style="color:#0ff; font-weight:bold;">👉 Mở bằng Chrome</a>
+  `;
+  document.body.appendChild(notice);
+}
+</script>
+
+<body>
+
+  <div id="startScreen">
+    <button id="startBtn">👉 Bắt đầu </button>
+  </div>
+
+  <!-- Counter -->
+  <div id="counterContainer">
+    <h1 id="counter">0</h1>
+  </div>
+
+  <!-- Happy Birthday -->
+  <div id="happyBirthday" class="hidden">
+    🎉 Chúc mừng sinh nhật tuổi 18 🎂
+  </div>
+
+  <!-- Hộp quà -->
+  <div class="gift" id="giftBox" style="display:none;">
+    <p id="openGiftText">👉 Hãy mở hộp quà 🎁</p>
+    <img class="gift-img" src="./gift.png" alt="Hộp quà">
+  </div>
+
+  <!-- Video + overlay -->
+  <div id="videoContainer" class="hidden">
+  <div id="videoIntroText">
+    <p id="introTyping"></p>
+  </div>
+  <video id="birthdayVideo" width="800" playsinline>
+    <source src="./video.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video.
+  </video>
+</div>
+
+  <!-- Thiệp -->
+  <div class="card hidden" id="message">
+    <h1>🎉 Happy Birthday Thảo Hương! 🎂</h1>
+    <p id="birthdayText"></p>
+  </div>
+
+  <audio id="birthdayMusic" src="./music_final.mp3"></audio>
+  <audio id="musicStart" src="./music_start.mp3"></audio>
+
+  <div id="endingScreen"><span> ✨ Tuổi 18 thật rực rỡ nhé! ✨ </span></div>
+
+  <div class="curtain curtain-left"></div>
+  <div class="curtain curtain-right"></div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
